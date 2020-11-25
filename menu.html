@@ -1,9 +1,77 @@
-<p>
-  <a href="charge.html">충전</a>
-</p>
-<p>
-  <a href="pay.html">결제</a>
-</p>
-<p>
-  <a href="index.html">로그아웃</a>
-</p>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>menu</title>
+<style>
+
+  table.menu {
+     width: 1000px;
+     border-collapse: separate;
+     border-spacing: 1px;
+     line-height: 4;
+     border-top: 1px solid #ccc;
+     font-size: 50;
+     margin : 10px;
+  }
+
+  .line{
+    width: 90%;
+    height: 2px;
+    background-color: rgb(200, 1, 80);
+  }
+
+  .title{
+    font-size: 36px;
+    color: rgb(200,1,80);
+    font-weight: bold;
+  }
+
+  .name{
+    font-size: 30px;
+    color: rgb(0,0,0);
+    background-color
+  }
+
+
+  .container{
+    width: 270px;
+    background-color: #EEEEF0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px;
+    text-align: center;
+    border: none ;
+    border-radius: 20px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0px;
+  }
+  
+  </style>
+
+
+
+<div align='center'>
+    <br>
+    <tr> <hr color="rgb(200,1,80)" class="line"> </tr>
+    <tr> <p class="title">잔액: 10000원</p> <p class="name">이름: 홍길동</p></tr>
+    <tr> <hr color="rgb(200,1,80)" class="line"> </tr>
+
+
+    <div class="container">
+      <button type="button" onclick="location.href='charge.html'" >충전</button>
+      <button type="button" onclick="location.href='pay.html'">결제</button>
+    </div>
+    
+    <button type="button" onclick="location.href='index.html'">로그아웃</button>
+
+    <div align="center" class="footer">
+      <img  src="image/POSTECH_로고_02.jpg" alt="POSTECH" width="30%">
+      <br><br>
+    </div>
+  
+</div>
+
+
