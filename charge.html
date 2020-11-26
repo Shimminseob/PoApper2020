@@ -1,41 +1,59 @@
-<style>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>충전</title>
+      <style>
+      table.menu {
+         width: 1000px;
+         border-collapse: separate;
+         border-spacing: 1px;
+         line-height: 4;
+         border-top: 1px solid #ccc;
+         font-size: 50;
+         margin : 10px;
+      }
 
-table.menu {
-   width: 1000px;
-   border-collapse: separate;
-   border-spacing: 1px;
-   line-height: 4;
-   border-top: 1px solid #ccc;
-   font-size: 50;
-   margin : 10px;
-}
+      table.menu th {
+         width: 300px;
+         font-weight: bold;
+         vertical-align: top;
+         border-bottom: 1px solid #ccc;
+      }
 
-table.menu th {
-   width: 300px;
-   font-weight: bold;
-   vertical-align: top;
-   border-bottom: 1px solid #ccc;
-}
+      table.menu td {
+         width: 700px
+         padding: 10px;
+         vertical-align: top;
+         border-bottom: 1px solid #ccc;
+         text-align: center;
+      }
+      </style>
+      <link href="./css/sidebar.css" rel="stylesheet">
+   </head>
+   <body>
+      <input type="checkbox" id="menuicon">
+      <label for="menuicon">
+         <span></span>
+       	<span></span>
+      	<span></span>
+      </label>
+      <div class="sidebar">
+         	<a href="menu.html">메인메뉴</a><br>
+            <a href="charge.html">충전</a><br>
+            <a href="pay.html">결제</a><br>
+            <a href="menu.html">로그아웃</a><br>
+      </div>
 
-table.menu td {
-   width: 700px
-   padding: 10px;
-   vertical-align: top;
-   border-bottom: 1px solid #ccc;
-   text-align: center;
-}
 
-</style>
-
-
-
-<div align='center'>
-<table class="menu">
-   <tr> <td colspan="2"> <img src="image/ponix/1.png" width="80%"> </td> </tr>
-   <tr> <th>내 계좌</th> <td> 우리은행 201238213091</td> </tr>
-   <tr> <th colspan="2"> <a href="#">10000원 충전하기</a> </th> </tr>
-   <tr> <th colspan="2"> <a href="#">50000원 충전하기</a> </th> </tr>
-</table>
-
-<h1> <p> <a href="menu.html">뒤로가기</a> </p></h1>
-</div>
+      <div align='center'>
+      <table class="menu">
+         <tr> <td colspan="2"> <img src="image/ponix/1.png" width="80%"> </td> </tr>
+         <tr> <th>내 계좌</th> <td> 우리은행 201238213091</td> </tr>
+         <tr> <th colspan="2"> <a href="#">10000원 충전하기</a> </th> </tr>
+         <tr> <th colspan="2"> <a href="#">50000원 충전하기</a> </th> </tr>
+      </table>
+      <h1> <p> <a href="menu.html">뒤로가기</a> </p></h1>
+      </div>
+   </body>
+</html>

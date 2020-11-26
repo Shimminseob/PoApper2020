@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8">
     <title>POVI Pay 결제</title>
+    <link href="./css/sidebar.css" rel="stylesheet">
   </head>
   <body>
     <style>
@@ -18,27 +18,40 @@
         font-size : 50px;
       }
     </style>
-    
+
     <h1 class="pay_title" align="center">결제 항목 선택</h1>
-    
+
     <p align="center">
       <a href="laundry.html">
-        <img src="image/pay/1.png" alt="세탁기" width=40%> 
+        <img src="image/pay/1.png" alt="세탁기" width=40%>
       </a>
       <a href="printer.html">
-        <img src="image/pay/3.PNG" alt="프린터" width=40%> 
+        <img src="image/pay/3.PNG" alt="프린터" width=40%>
       </a>
     </p>
     <p align="center">
       <a href="cafeteria">
-        <img src="image/pay/4.PNG" alt="학생식당" width=40%> 
+        <img src="image/pay/4.PNG" alt="학생식당" width=40%>
       </a>
       <a href="store.html">
-        <img src="image/pay/2.PNG" alt="편의점" width=40%> 
+        <img src="image/pay/2.PNG" alt="편의점" width=40%>
       </a>
     </p>
     <p class="back" align="center">
       <a href="menu.html">뒤로가기</a>
     </p>
+
+    <input type="checkbox" id="menuicon">
+    <label for="menuicon">
+       <span></span>
+     	<span></span>
+    	<span></span>
+    </label>
+    <div class="sidebar">
+       	<a href="menu.html">메인메뉴</a><br>
+          <a href="charge.html">충전</a><br>
+          <a href="pay.html">결제</a><br>
+          <a href="menu.html">로그아웃</a><br>
+    </div>
   </body>
 </html>
