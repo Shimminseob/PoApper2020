@@ -2,7 +2,6 @@
 <title>menu</title>
 <link href="./css/sidebar.css" rel="stylesheet">
 <style>
-
   table.menu {
      width: 1000px;
      border-collapse: separate;
@@ -49,8 +48,22 @@
     position: fixed;
     bottom: 0px;
   }
-  
-  </style>
+</style>
+
+<script>
+   // 파라메터 정보가 저장될 오브젝트
+   // common.js 같은 모든 페이지에서 로딩되는 js 파일에 넣어두면 됨.
+   var getParam = function(key){
+        var _parammap = {};
+        document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+            function decode(s) {
+                return decodeURIComponent(s.split("+").join(" "));
+            }
+            _parammap[decode(arguments[1])] = decode(arguments[2]);
+        });
+        return _parammap[key];
+   };
+</script>
 
 
 <input type="checkbox" id="menuicon">
@@ -63,13 +76,20 @@
    	<a href="menu.html">메인메뉴</a><br>
       <a href="charge.html">충전</a><br>
       <a href="pay.html">결제</a><br>
-      <a href="menu.html">로그아웃</a><br>
+      <a href="index.html">로그아웃</a><br>
 </div>
 
 <div align='center'>
     <br>
     <tr> <hr color="rgb(200,1,80)" class="line"> </tr>
-    <tr> <p class="title">잔액: 10000원</p> <p class="name">이름: 홍길동</p></tr>
+    <tr>
+      <p class="title">
+         잔액: 10000원
+      </p>
+      <p class="name">
+         <script> document.write(getParam("user-id")); </script>
+      </p>
+   </tr>
     <tr> <hr color="rgb(200,1,80)" class="line"> </tr>
 
 
@@ -77,14 +97,12 @@
       <button type="button" onclick="location.href='charge.html'" >충전</button>
       <button type="button" onclick="location.href='pay.html'">결제</button>
     </div>
-    
+
     <button type="button" onclick="location.href='index.html'">로그아웃</button>
 
     <div align="center" class="footer">
       <img  src="image/POSTECH_로고_02.jpg" alt="POSTECH" width="30%">
       <br><br>
     </div>
-  
+
 </div>
-
-
