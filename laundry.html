@@ -22,51 +22,68 @@
 
         <table width="300px" align="center" border="5" bordercolor="white" bgcolor="white" class="table">
           <tr height="160px">
-            <td align="center" bgcolor="#EEEEF0" class="block">
+            <td align="center" bgcolor="#EEEEF0" class="block" onClick="location.href='laundry_reservation.html'">
               <font style="font-size: 16px;">RC 1층 0번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">
+                <?php
+                  include('conn.php');
+                  $sql = "SELECT * FROM laundry where no='1'";
+                  $result = mysqli_query($conn, $sql);
+                  $row = mysqli_fetch_array($result);
+                  $fin = $row['end_time'];
+                  $now = date('Y-m-d H:i:s');
+                  $left = strtotime($fin) - strtotime($now);
+                  if($left > 0){
+                    $hour = floor($left/3600);
+                    $min = floor(($left%3600)/60);
+                    echo $hour," : ",$min;
+                  } else {
+                    echo "0 : 0";
+                  }
+                ?>
+              </font>
             </td>
             <td align="center" bgcolor="#EEEEF0" class="block">
-              <font style="font-size: 16px;">RC 1층 0번</font><br>
+              <font style="font-size: 16px;">RC 1층 1번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">0 : 00</font>
             </td>
           </tr>
           <tr height="160px">
             <td align="center"bgcolor="#EEEEF0" class="block">
-              <font style="font-size: 16px;">RC 1층 0번</font><br>
+              <font style="font-size: 16px;">RC 1층 2번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">0 : 00</font>
             </td>
             <td align="center" bgcolor="#EEEEF0" class="block">
-              <font style="font-size: 16px;">RC 1층 0번</font><br>
+              <font style="font-size: 16px;">RC 1층 3번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">0 : 00</font>
             </td>
           </tr>
           <tr height="160px">
             <td align="center" bgcolor="#EEEEF0" class="block">
-              <font style="font-size: 16px;">RC 1층 0번</font><br>
+              <font style="font-size: 16px;">RC 1층 4번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">0 : 00</font>
             </td>
             <td align="center" bgcolor="#EEEEF0" class="block">
-              <font style="font-size: 16px;">RC 1층 0번</font><br>
+              <font style="font-size: 16px;">RC 1층 5번</font><br>
               <img src="image/laundry.png" alt="Image Error" height="60px">
               <br>
               <font style="font-size: 12px;">남은 시간</font><br>
-              <font style="font-size: 16px;">0시간 00분</font>
+              <font style="font-size: 16px;">0 : 00</font>
             </td>
           </tr>
           

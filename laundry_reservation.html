@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="image/laundry.ico" type="image/x-icon">
+    <link rel="icon" href="image/laundry.ico" type="image/x-icon">
+    <title>세탁기 예약</title>
+    <script>
+      function reserve() {
+        alert("RC 1층 0번 세탁기가 예약되었습니다");
+        location.href="./reserve.php";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div align="center">
+      <br>
+      <p class="title">
+        Laundry Service
+      </p>
+      <hr color="rgb(102, 102, 92)" class="line">
+
+      <div align="center">
+        <button type="button" class="button-back" onclick="location.href='./laundry.html'">Back</button>
+        <table width="270px" align="center" border="5" bordercolor="white" bgcolor="white" class="table">
+          <tr>
+            <td align="center" bgcolor="#EEEEF0" class="block">
+              <br>
+              <font style="font-size: 32px;">RC 1층 0번</font><br>
+              <img src="image/laundry.png" alt="Image Error" height="30%">
+              <br>
+              <font style="font-size: 22px;">남은 시간</font><br>
+              <font style="font-size: 32px;">
+                <?php
+                  include('conn.php');
+                  $sql = "SELECT * FROM laundry where no='1'";
+                  $result = mysqli_query($conn, $sql);
+                  $row = mysqli_fetch_array($result);
+                  $fin = $row['end_time'];
+                  $now = date('Y-m-d H:i:s');
+                  $left = strtotime($fin) - strtotime($now);
+                  if($left > 0){
+                    $hour = floor($left/3600);
+                    $min = floor(($left%3600)/60);
+                    echo $hour," : ",$min;
+                  } else {
+                    echo "0 : 0";
+                  }
+                ?>
+              </font><br><br>
+          </tr>
+        </table>
+        <button type="button" class="button-back" onclick='reserve()'>예약</button>
+      </div>
+    </div>
+    
+    <div align="center" class="footer">
+      <img src="image/POSTECH_로고_02.jpg" alt="POSTECH" width="30%">
+      <br><br>
+    </div>
+  </body>
+</html>
