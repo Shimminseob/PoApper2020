@@ -1,3 +1,22 @@
+<?php
+  session_start();
+  include('conn.php');
+  if (mysqli_connect_errno())
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  else {
+    $sql = "SELECT * FROM printer";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $st_one = $row['status'];
+    $row = mysqli_fetch_array($result);
+    $st_two = $row['status'];
+    $row = mysqli_fetch_array($result);
+    $st_three = $row['status'];
+    $row = mysqli_fetch_array($result);
+    $st_four = $row['status'];
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,40 +37,36 @@
 
       <table width="300px" align="center" border="5" bordercolor="white" bgcolor="white" class="table">
         <tr height="160px">
-          <td align="center" bgcolor="#EEEEF0" class="block">
+          <td align="center" bgcolor="#EEEEF0" class="block" onclick="location.href='./print.html'">
             <font style="font-size: 16px;">청암 5층 1번</font><br><br>
             <img src="image/printer2.png" alt="Image Error" height="60px"><br>
             <font style="font-size: 12px;">상태</font><br>
-            <font style="font-size: 16px;">종이없음</font>
+            <font style="font-size: 16px;"><?php echo $st_one?></font>
           </td>
-          <td align="center" bgcolor="#EEEEF0" class="block">
+          <td align="center" bgcolor="#EEEEF0" class="block" onclick="location.href='./print.html'">
             <font style="font-size: 16px;">청암 5층 2번</font><br><br>
             <img src="image/printer2.png" alt="Image Error" height="60px"><br>
             <font style="font-size: 12px;">상태</font><br>
-            <font style="font-size: 16px;">정상</font>
+            <font style="font-size: 16px;"><?php echo $st_two?></font>
           </td>
         </tr>
         <tr height="160px">
-          <td align="center" bgcolor="#EEEEF0" class="block">
+          <td align="center" bgcolor="#EEEEF0" class="block" onclick="location.href='./printrc.html'">
             <font style="font-size: 16px;">RC 1층 1번</font><br><br>
             <img src="image/printer2.png" alt="Image Error" height="60px"><br>
             <font style="font-size: 12px;">상태</font><br>
-            <font style="font-size: 16px;">고장</font>
+            <font style="font-size: 16px;"><?php echo $st_three?></font>
           </td>
-          <td align="center" bgcolor="#EEEEF0" class="block">
+          <td align="center" bgcolor="#EEEEF0" class="block" onclick="location.href='./printrc.html'">
             <font style="font-size: 16px;">RC층 1층 2번</font><br><br>
             <img src="image/printer2.png" alt="Image Error" height="60px"><br>
             <font style="font-size: 12px;">상태</font><br>
-            <font style="font-size: 16px;">정상</font>
+            <font style="font-size: 16px;"><?php echo $st_four?></font>
           </td>
         </tr>
       </table>
       
     </div>
 
-    <div align="center" class="footer">
-      <img src="image/POSTECH_로고_02.jpg" alt="POSTECH" width="30%">
-      <br><br>
-    </div>
   </body>
 </html>
