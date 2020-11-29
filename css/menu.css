@@ -1,0 +1,32 @@
+table.menu {
+    width: 1000px;
+    border-collapse: separate;
+    border-spacing: 1px;
+    line-height: 4;
+    border-top: 1px solid #ccc;
+    font-size: 50;
+    margin : 10px;
+ }
+
+ .name{
+   font-size: 30px;
+   color: rgb(0,0,0);
+ }
+
+ .container{
+   width: 270px;
+   background-color: rgba(238, 238, 240, 0.3);
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 40px;
+   margin-bottom: 40px;
+   padding: 40px;
+   text-align: center;
+   border: none ;
+   border-radius: 20px;
+ }
+
+ .footer {
+   position: fixed;
+   bottom: 0px;
+ }
